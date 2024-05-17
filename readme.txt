@@ -27,7 +27,7 @@ Test06-微积分(matplotlib)
  - 略，见下一文件。
 Test07-自动微分
  - 梯度(反向传播)，清空x的梯度(grad.zero_)，向量转标量求反向传播，固定一个公式为常数(detach)，设置请求梯度。
- - matplotlib绘图，绘制反向传播图像。
+ - matplotlib绘图，绘制反向传播图像（限制是Numpy数组比较方便，不支持Tensor。）
  
 Test08-概率
  - torch.distributions，投硬币模拟，正态分布函数绘制。
@@ -37,4 +37,8 @@ Test09-线性神经网络
  - 正态分布(normal)，线性回归方程y=Xw+b+ε，矩阵乘法(matmul)，生成器(迭代器yield)，返回下标对应子序列(list[idxs])。
  - 优化算法(sgd基于小批量（mini-batch）的随机梯度下降)。
  - 深度学习框架(nn)，数据处理工具(data模块构造PyTorch数据迭代器DataLoader)。
- 
+ - 交叉熵公式(极大似然函数)，softmax
+ - transforms.ToTensor图像格式转换，torchvision.datasets.FashionMNIST加载数据集，_占位符，axes.flatten数组压缩(展平)。
+ - enumerate函数用于获取循环索引和对应的值；zip函数用于将一维数组元素对应起来。
+ - 迭代器访问数据集[next(iter(data.DataLoader(data, batch_size)))]，DataLoader自身也可作为迭代器访问。
+ - 转换列表插入(trans.insert)。
