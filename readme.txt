@@ -40,5 +40,14 @@ Test09-线性神经网络
  - 交叉熵公式(极大似然函数)，softmax
  - transforms.ToTensor图像格式转换，torchvision.datasets.FashionMNIST加载数据集，_占位符，axes.flatten数组压缩(展平)。
  - enumerate函数用于获取循环索引和对应的值；zip函数用于将一维数组元素对应起来。
- - 迭代器访问数据集[next(iter(data.DataLoader(data, batch_size)))]，DataLoader自身也可作为迭代器访问。
+ - 迭代器访问数据集[iterator，next(iter(data.DataLoader(data, batch_size)))]，DataLoader自身也可作为迭代器访问。
  - 转换列表插入(trans.insert)。
+ - 格式化小数(:f, :.2f, f-string)。
+ 
+Test09_2-softmax手动实现
+ - 二维数组访问( y_hat[[0, 1], y] )。
+ - 获取矩阵每行最大值的下标( y_hat.argmax(axis=1) )。
+ - '=='比较像等( y_hat.type(y)必须同类型，值相同才True )，bool.sum求和也需要调用( cmp.type(y.dtype) )。
+ - 初始化0数组( [0.0]*n )，列表推导式( [expression for item in iterable]生成新列表 )
+ 
+ 
