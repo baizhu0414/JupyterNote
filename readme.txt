@@ -2,11 +2,11 @@
 c.NotebookApp.notebook_dir = 'D:\PythonPlace\Jupyter'
 
 Test01-基础语法
- - 数据类型：集合{}，元组()，列表[]，字典{key:val}。
+ - 数据类型：集合{}，元组(tuple)，列表[list]，字典{key:val}。
  - 类型转换，in，遍历，一维数组取一段(去除首尾元素)，数组列表复制。
  
 Test02-NumPy
- - 数组元素类型变换，数组reshape，生成等间隔数组，随机数组(np.random)。
+ - 数组元素类型变换，数组reshape，生成等间隔数组，随机数组(np.random)，数组复制和倍数(numpy和python列表不同)。
  - 二维数组访问，深度复制，numpy多维数组拼接(axis)。
  
 Test03-Pytorch基本语法
