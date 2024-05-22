@@ -18,9 +18,9 @@ Test04-Pandas数据预处理
  - 删除NaN最多列（DataFrame.isna,sum,max,Series.to_dict，del原地删除，drop可选择原地或复制一份）。
  - DataFrame,Series:count统计列的缺失值，dropna（删除NaN较多列）， Series.idxmax返回val最大的key。
  
-Test05-线代操作
+Test05-线代操作torch
  - 矩阵按位乘法(A*A,A**2)，数据类型torch中type(A)，行列求和(keepdims)，平均值(mean)，元素数，广播（除法等运算）。
- - 累计求和(i行前的数字和)，一维向量点积(dot内积)，矩阵*向量Ax(mv、Test09-matmul)，矩阵乘法mm，向量的L2范数(norm)。
+ - 累计求和(i行前的数字和)，一维向量点积(1D-dot内积)，矩阵*向量Ax(mv、Test09-matmul)，矩阵乘法(mm,Test09_2-matmul)，向量的L2范数(norm)。
  - 向量绝对值abs，len，多维数组sum，多维数组L2范数(norm)。
  
 Test06-微积分(matplotlib)
@@ -39,7 +39,9 @@ Test09-线性神经网络
  - 深度学习框架(nn)，数据处理工具(data模块构造PyTorch数据迭代器DataLoader)。
  - 交叉熵公式(极大似然函数)，softmax
  - transforms.ToTensor图像格式转换，torchvision.datasets.FashionMNIST加载数据集，_占位符，axes.flatten数组压缩(展平)。
- - enumerate函数用于获取循环索引和对应的值；zip函数用于将一维数组元素对应起来。
+ - enumerate函数用于获取循环索引和对应的值；zip函数用于将一维数组元素对应起来；
+ - 绘制2D单通道‘图像’[ax.imshow(img.asnumpy())，Pytorch张量->NumPy数组，Matplotlib 等库使用 NumPy 数组来绘制图像]。
+ - 绘制线条[ax.plot(x, y, fmt); x,y为横纵坐标序列]
  - 迭代器访问数据集[iterator，next(iter(data.DataLoader(data, batch_size)))]，DataLoader自身也可作为迭代器访问。
  - 转换列表插入(trans.insert)。
  - 格式化小数(:f, :.2f, f-string)。
@@ -47,7 +49,10 @@ Test09-线性神经网络
 Test09_2-softmax手动实现
  - 二维数组访问( y_hat[[0, 1], y] )。
  - 获取矩阵每行最大值的下标( y_hat.argmax(axis=1) )。
- - '=='比较像等( y_hat.type(y)必须同类型，值相同才True )，bool.sum求和也需要调用( cmp.type(y.dtype) )。
+ - '=='比较像等( y_hat.type(y)必须同类型，值相同才True )，bool.sum求和也需要调用( cmp.type(y.dtype)转换为float列表 )。
  - 初始化0数组( [0.0]*n )，列表推导式( [expression for item in iterable]生成新列表 )
+ - 元组相加会组合起来(a,b)+(c,)=(a,b,c)
  
+Test09_3-softmax简单实现
+ - 略，直接调用了系统的函数。
  
