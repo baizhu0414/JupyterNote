@@ -6,8 +6,9 @@ Test01-基础语法
  - 类型转换，in，遍历，一维数组取一段(去除首尾元素)，数组列表复制。
  
 Test02-NumPy
- - 数组元素类型变换，数组reshape，生成等间隔数组，随机数组(np.random)，数组复制和倍数(numpy和python列表不同)。
+ - 数组元素类型变换，数组reshape，生成等间隔数组，随机数组(np.random；rand,randn)，数组复制和倍数(numpy和python列表不同)。
  - 二维数组访问，深度复制，numpy多维数组拼接(axis)。
+ - list*2乘法区别(Python& NumPy)。
  
 Test03-Pytorch基本语法
  - torch多维数组拼接(dim)，访问单个元素和一行，原地操作数据，Tensor数组和Numpy数组转化。
@@ -24,20 +25,21 @@ Test05-线代操作torch
  - 向量绝对值abs，len，多维数组sum，多维数组L2范数(norm)。
  
 Test06-微积分(matplotlib)
- - 略，见下一文件。
+ - d2l函数定义：use_svg_display, set_figsize, set_axes, plot.
 Test07-自动微分
- - 梯度(反向传播)，清空x的梯度(grad.zero_)，向量转标量求反向传播，固定一个公式为常数(detach)，设置请求梯度。
+ - 梯度(grad反向传播)，清空x的梯度(grad.zero_)，向量转标量求反向传播，固定一个公式为常数(detach)，设置请求梯度。
  - matplotlib绘图，绘制反向传播图像（限制是Numpy数组比较方便，不支持Tensor。）
  
 Test08-概率
- - torch.distributions，投硬币模拟，正态分布函数绘制。
- - help查函数，dir查模块，？查函数。
+ - torch.distributions，投硬币模拟，正态分布函数绘制( X~N(μ, δ^2) )及生成数据模拟。
+ - 生成序列 np.linspace(-2, 2, 100), np.arange(-2, 2, 0.1)功能类似。
+ - help和 ？查函数，dir查模块。
 
 Test09-线性神经网络
  - 正态分布(normal)，线性回归方程y=Xw+b+ε，矩阵乘法(matmul)，生成器(迭代器yield)，返回下标对应子序列(list[idxs])。
  - 优化算法(sgd基于小批量（mini-batch）的随机梯度下降)。
  - 深度学习框架(nn)，数据处理工具(data模块构造PyTorch数据迭代器DataLoader)。
- - 交叉熵公式(极大似然函数)，softmax
+ - 交叉熵公式(极大似然函数)，softmax[实现见9-2]
  - transforms.ToTensor图像格式转换，torchvision.datasets.FashionMNIST加载数据集，_占位符，axes.flatten数组压缩(展平)。
  - enumerate函数用于获取循环索引和对应的值；zip函数用于将一维数组元素对应起来；
  - 绘制2D单通道‘图像’[ax.imshow(img.asnumpy())，Pytorch张量->NumPy数组，Matplotlib 等库使用 NumPy 数组来绘制图像]。
@@ -45,6 +47,7 @@ Test09-线性神经网络
  - 迭代器访问数据集[iterator，next(iter(data.DataLoader(data, batch_size)))]，DataLoader自身也可作为迭代器访问。
  - 转换列表插入(trans.insert)。
  - 格式化小数(:f, :.2f, f-string)。
+ - get_fashion_mnist_labels, show_images, load_data_fashion_mnist
  
 Test09_2-softmax手动实现
  - 二维数组访问( y_hat[[0, 1], y] )。
@@ -52,7 +55,11 @@ Test09_2-softmax手动实现
  - '=='比较像等( y_hat.type(y)必须同类型，值相同才True )，bool.sum求和也需要调用( cmp.type(y.dtype)转换为float列表 )。
  - 初始化0数组( [0.0]*n )，列表推导式( [expression for item in iterable]生成新列表 )
  - 元组相加会组合起来(a,b)+(c,)=(a,b,c)
+ - cross_entropy，evaluate_accuracy，train_epoch_ch3，train_ch3，predict_ch3.
  
 Test09_3-softmax简单实现
- - 略，直接调用了系统的函数。
+ - 略，直接调用了系统的函数(nn.Linear等)。
  
+Test10_感知机
+ - ReLU函数，Sigmoid函数，tanh函数.
+ - 
