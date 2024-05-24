@@ -35,8 +35,9 @@ Test08-概率
  - 生成序列 np.linspace(-2, 2, 100), np.arange(-2, 2, 0.1)功能类似。
  - help和 ？查函数，dir查模块。
 
-Test09-线性神经网络
- - 正态分布(normal)，线性回归方程y=Xw+b+ε，矩阵乘法(matmul)，生成器(迭代器yield)，返回下标对应子序列(list[idxs])。
+Test09-线性神经网络(均方误差nn.MSELoss)
+ - 正态分布(normal)，线性回归方程y=Xw+b+ε，矩阵乘法(matmul)，
+ - 打乱数据(shuffle)，生成器(迭代器yield)，返回下标对应子序列(list[idxs])。
  - 优化算法(sgd基于小批量（mini-batch）的随机梯度下降)。
  - 深度学习框架(nn)，数据处理工具(data模块构造PyTorch数据迭代器DataLoader)。
  - 交叉熵公式(极大似然函数)，softmax[实现见9-2]
@@ -47,7 +48,7 @@ Test09-线性神经网络
  - 迭代器访问数据集[iterator，next(iter(data.DataLoader(data, batch_size)))]，DataLoader自身也可作为迭代器访问。
  - 转换列表插入(trans.insert)。
  - 格式化小数(:f, :.2f, f-string)。
- - get_fashion_mnist_labels, show_images, load_data_fashion_mnist
+ - data_iter，load_array，get_fashion_mnist_labels, show_images, load_data_fashion_mnist
  
 Test09_2-softmax手动实现
  - 二维数组访问( y_hat[[0, 1], y] )。
@@ -55,11 +56,14 @@ Test09_2-softmax手动实现
  - '=='比较像等( y_hat.type(y)必须同类型，值相同才True )，bool.sum求和也需要调用( cmp.type(y.dtype)转换为float列表 )。
  - 初始化0数组( [0.0]*n )，列表推导式( [expression for item in iterable]生成新列表 )
  - 元组相加会组合起来(a,b)+(c,)=(a,b,c)
- - cross_entropy，evaluate_accuracy，train_epoch_ch3，train_ch3，predict_ch3.
+ - Accumulator,Animator,cross_entropy，evaluate_accuracy，train_epoch_ch3，train_ch3，predict_ch3.
  
 Test09_3-softmax简单实现
  - 略，直接调用了系统的函数(nn.Linear等)。
  
 Test10_感知机
  - ReLU函数，Sigmoid函数，tanh函数.
- - 
+ - 参数初始化torch.randn，torch.zeros，torch.zeros_like；矩阵乘法X @ W1+b1；数据类型type(net)。
+ 
+Test11_模型选择、过拟合
+ - np.power(numpy.ndarray, ndarray)，ndarray转Tensor( torch.tensor )，
