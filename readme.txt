@@ -21,7 +21,7 @@ Test04-Pandas数据预处理
  
 Test05-线代操作torch
  - 矩阵按位乘法(A*A,A**2)，数据类型torch中type(A)，行列求和(keepdims)，平均值(mean)，元素数，广播（除法等运算）。
- - 累计求和(i行前的数字和)，一维向量点积(1D-dot内积)，矩阵*向量Ax(mv、Test09-matmul)，矩阵乘法(mm,Test09_2-matmul)，向量的L2范数(norm)。
+ - 累计求和(i行前的数字和)，一维向量点积(1D-dot内积[sum(a*b)]!)，矩阵*向量Ax(mv、Test09-matmul)，矩阵乘法(mm,Test09_2-matmul)，向量的L2范数(norm:标量张量)。
  - 向量绝对值abs，len，多维数组sum，多维数组L2范数(norm)。
  
 Test06-微积分(matplotlib)
@@ -36,7 +36,7 @@ Test08-概率
  - help和 ？查函数，dir查模块。
 
 Test09-线性神经网络(均方误差nn.MSELoss)
- - 正态分布(normal)，线性回归方程y=Xw+b+ε，矩阵乘法(matmul)，
+ - 正态分布( normal(w, b, shape) )，线性回归方程y=Xw+b+ε，矩阵乘法(matmul)，
  - 打乱数据(shuffle)，生成器(迭代器yield)，返回下标对应子序列(list[idxs])。
  - 优化算法(sgd基于小批量（mini-batch）的随机梯度下降)。
  - 深度学习框架(nn)，数据处理工具(data模块构造PyTorch数据迭代器DataLoader)。
@@ -48,7 +48,8 @@ Test09-线性神经网络(均方误差nn.MSELoss)
  - 迭代器访问数据集[iterator，next(iter(data.DataLoader(data, batch_size)))]，DataLoader自身也可作为迭代器访问。
  - 转换列表插入(trans.insert)。
  - 格式化小数(:f, :.2f, f-string)。
- - data_iter，load_array，get_fashion_mnist_labels, show_images, load_data_fashion_mnist
+ - data_iter，load_array，get_fashion_mnist_labels, show_images, load_data_fashion_mnist.
+ - synthetic_data+load_array.
  
 Test09_2-softmax手动实现
  - 二维数组访问( y_hat[[0, 1], y] )。
@@ -57,6 +58,7 @@ Test09_2-softmax手动实现
  - 初始化0数组( [0.0]*n )，列表推导式( [expression for item in iterable]生成新列表 )
  - 元组相加会组合起来(a,b)+(c,)=(a,b,c)
  - Accumulator,Animator,cross_entropy，evaluate_accuracy，train_epoch_ch3，train_ch3，predict_ch3.
+ - 生成二维空数组( x= [[] for _ in range(n)] )
  
 Test09_3-softmax简单实现
  - 略，直接调用了系统的函数(nn.Linear等)。
@@ -66,4 +68,9 @@ Test10_感知机
  - 参数初始化torch.randn，torch.zeros，torch.zeros_like；矩阵乘法X @ W1+b1；数据类型type(net)。
  
 Test11_模型选择、过拟合
- - np.power(numpy.ndarray, ndarray)，ndarray转Tensor( torch.tensor )，
+ - np.power(numpy.ndarray, ndarray)，ndarray转Tensor( torch.tensor ).
+ - 数组集体赋值( true_w[0:4] = np.array([5, 4.3, -2.1, 1.2]) ).
+ - evaluate_loss.
+ 
+Test12_权重衰减、暂退法
+ - Torch.Tensor：w.pow(2) 等价于 w**2 或 torch.square(w)，
