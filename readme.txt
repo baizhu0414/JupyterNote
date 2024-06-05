@@ -49,7 +49,7 @@ Test09-线性神经网络(均方误差nn.MSELoss)
  - 转换列表插入(trans.insert)。
  - 格式化小数(:f, :.2f, f-string)。
  - data_iter，load_array，get_fashion_mnist_labels, show_images, load_data_fashion_mnist.
- - synthetic_data+load_array.
+ - synthetic_data+load_array，squared_loss(均方损失/最小二乘法)，synthetic_data。
  
 Test09_2-softmax手动实现
  - 二维数组访问( y_hat[[0, 1], y] )。
