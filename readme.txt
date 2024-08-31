@@ -73,4 +73,8 @@ Test11_模型选择、过拟合
  - evaluate_loss.
  
 Test12_权重衰减、暂退法
- - Torch.Tensor：w.pow(2) 等价于 w**2 或 torch.square(w)，
+ - Torch.Tensor：w.pow(2) 等价于 w**2 或 torch.square(w).
+ - L2范式[l= loss+ lambd*l2_penalty(w)]，torch.optim.SGD(weight_decay).
+ - relu+dropout层(Test09-2 train_ch3)，np.random.uniform生成随机的均匀分布的矩阵.
+ 
+ 
